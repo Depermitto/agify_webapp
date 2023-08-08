@@ -1,3 +1,7 @@
+mod counter;
+mod agify;
+
+
 fn main() {
-    println!("Hello, world!");
+    yew::Renderer::<agify::Agify>::new().render();
 }
