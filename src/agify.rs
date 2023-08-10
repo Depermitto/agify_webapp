@@ -1,9 +1,12 @@
 use std::collections::HashMap;
 use std::fmt::Display;
 use gloo::console::log;
+use stylist::Style;
 use wasm_bindgen::JsCast;
 use web_sys::HtmlInputElement;
 use yew::{Component, Context, Html, html, Event};
+
+const STYLE_FILE: &str = include_str!("style.css");
 
 pub struct Agify {
     entries: HashMap<String, i32>
@@ -73,6 +76,7 @@ impl Component for Agify {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
+        // let style = Style::new(STYLE_FILE);
         html! {
             <div>
                 <label for="name_input">{"How old does the hivemind think you are? Enter somebody's name!"}</label>
